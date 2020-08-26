@@ -86,6 +86,10 @@ public class LeagueAnalyser {
                 comparator = Comparator.comparing(ipl -> ipl.noOfRuns + ipl.noOfWickets);
                 leagueList = map.values().stream().collect(Collectors.toList());
                 break;
+            case "AVG":
+                comparator = Comparator.comparing(ipl -> ipl.battingAverageScore);
+                leagueList = map.values().stream().collect(Collectors.toList());
+                break;
         }
         Collections.sort(leagueList, comparator);
         String sortedJsonData = new Gson().toJson(leagueList);

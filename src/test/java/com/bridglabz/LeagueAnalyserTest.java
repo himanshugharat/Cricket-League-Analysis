@@ -175,4 +175,14 @@ public class LeagueAnalyserTest {
         Assert.assertEquals("MS Dhoni", leagueRunsCSVS[leagueRunsCSVS.length - 1].name);
 
     }
+    @Test
+    public void givenFile_SortWithRespectAverageAndNOCentury_ReturnHighestPlayerName() throws LeagueAnalyserException {
+        LeagueLoader leagueLoader = new LeagueLoader();
+        LeagueAnalyser leagueAnalyser = new LeagueAnalyser();
+        Map<String, LeagueDAO> map = leagueLoader.getListData();
+        String sortedData = leagueAnalyser.sortedData(map, "AVG");
+        LeagueDAO[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueDAO[].class);
+        Assert.assertEquals("Mayank Markande", leagueRunsCSVS[leagueRunsCSVS.length - 1].name);
+
+    }
 }
