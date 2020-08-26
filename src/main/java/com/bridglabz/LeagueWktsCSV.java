@@ -6,9 +6,9 @@ public class LeagueWktsCSV {
     @CsvBindByName(column = "PLAYER")
     public String name;
     @CsvBindByName(column = "Mat")
-    public String noOfMatches;
+    public int noOfMatches;
     @CsvBindByName(column = "Inns")
-    public String noOfInnings;
+    public int noOfInnings;
     @CsvBindByName(column = "Ov")
     public String noOfOvers;
     @CsvBindByName(column = "Runs")

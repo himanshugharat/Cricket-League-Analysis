@@ -6,25 +6,25 @@ public class LeagueRunsCSV {
     @CsvBindByName(column = "PLAYER")
     public String name;
     @CsvBindByName(column = "Mat")
-    public String noOfMatches;
+    public int noOfMatches;
     @CsvBindByName(column = "Inns")
-    public String noOfInnings;
+    public int noOfInnings;
     @CsvBindByName(column = "Runs")
-    public String noOfRuns;
+    public int noOfRuns;
     @CsvBindByName(column = "HS")
-    public String highestScore;
+    public int highestScore;
     @CsvBindByName(column = "BF")
-    public String noOfBallFaced;
+    public double noOfBallFaced;
     @CsvBindByName(column = "Avg")
-    public String averageScore;
+    public double averageScore;
     @CsvBindByName(column = "SR")
-    public String strikeRate;
+    public double strikeRate;
     @CsvBindByName(column = "100")
-    public String noOfHundresds;
+    public int noOfHundresds;
     @CsvBindByName(column = "50")
-    public String noOfFifty;
+    public int noOfFifty;
     @CsvBindByName(column = "4s")
-    public String noOfFours;
+    public int noOfFours;
     @CsvBindByName(column = "6s")
-    public String noOfSixs;
+    public int noOfSixs;
 }
