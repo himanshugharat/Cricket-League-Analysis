@@ -44,6 +44,7 @@ public class LeagueAnalyserTest {
         Assert.assertEquals("Andre Russell", leagueRunsCSVS[leagueRunsCSVS.length - 1].name);
 
     }
+
     @Test
     public void givenFile_SortWithRespectToSixFourAndStrikeRate_ReturnHighestPlayerName() throws LeagueAnalyserException {
         LeagueAnalyser leagueAnalyser = new LeagueAnalyser();
