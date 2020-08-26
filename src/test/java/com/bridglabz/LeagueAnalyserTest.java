@@ -4,6 +4,9 @@ import com.google.gson.Gson;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.List;
+import java.util.Map;
+
 public class LeagueAnalyserTest {
     private final String RUNS_SHEET = ".\\src\\test\\resources\\IPL2019FactsheetMostRuns.csv";
     private final String WKTS_SHEET = ".\\src\\test\\resources\\IPL2019FactsheetMostWkts.csv";
@@ -139,6 +142,26 @@ public class LeagueAnalyserTest {
         String sortedData = leagueAnalyser.sortData("BOWLING_WKTS_AVG");
         LeagueWktsCSV[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueWktsCSV[].class);
         Assert.assertEquals("Deepak Chahar", leagueRunsCSVS[leagueRunsCSVS.length - 1].name);
+
+    }
+    @Test
+    public void givenFile_SortWithRespectBowlerAndBattingAverage_ReturnHighestPlayerName() throws LeagueAnalyserException {
+        LeagueLoader leagueLoader=new LeagueLoader();
+        LeagueAnalyser leagueAnalyser=new LeagueAnalyser();
+        Map<String,LeagueDAO> map=leagueLoader.getListData();
+        String sortedData = leagueAnalyser.sortedData(map,"AVG_BATTING_BOWLING");
+        LeagueDAO[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueDAO[].class);
+        Assert.assertEquals("Mayank Markande", leagueRunsCSVS[leagueRunsCSVS.length-1].name);
+
+    }
+    @Test
+    public void givenFile_SortWithRespectToAllRounder_ReturnHighestPlayerName() throws LeagueAnalyserException {
+        LeagueLoader leagueLoader=new LeagueLoader();
+        LeagueAnalyser leagueAnalyser=new LeagueAnalyser();
+        Map<String,LeagueDAO> map=leagueLoader.getListData();
+        String sortedData = leagueAnalyser.sortedData(map,"ALL_ROUNDER");
+        LeagueDAO[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueDAO[].class);
+        Assert.assertEquals("Mayank Markande", leagueRunsCSVS[leagueRunsCSVS.length-1].name);
 
     }
 }
