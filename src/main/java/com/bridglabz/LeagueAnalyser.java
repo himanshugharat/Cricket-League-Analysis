@@ -55,11 +55,15 @@ public class LeagueAnalyser {
                 leagueList = map.values().stream().collect(Collectors.toList());
                 break;
             case "BOWLING_SR_4W_5W":
-                comparator = Comparator.comparing(ipl -> ipl.strikeRate+ipl.fourWikts+ipl.fiveWkts);
+                comparator = Comparator.comparing(ipl -> ipl.strikeRate + ipl.fourWikts + ipl.fiveWkts);
                 leagueList = map.values().stream().collect(Collectors.toList());
                 break;
             case "BOWLING_SR_AVG":
-                comparator = Comparator.comparing(ipl -> ipl.strikeRate+ipl.bowlingAverageScore);
+                comparator = Comparator.comparing(ipl -> ipl.strikeRate + ipl.bowlingAverageScore);
+                leagueList = map.values().stream().collect(Collectors.toList());
+                break;
+            case "BOWLING_WKTS_AVG":
+                comparator = Comparator.comparing(ipl -> ipl.noOfRuns + ipl.bowlingAverageScore);
                 leagueList = map.values().stream().collect(Collectors.toList());
                 break;
         }
