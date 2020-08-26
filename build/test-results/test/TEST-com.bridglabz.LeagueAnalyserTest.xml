@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridglabz.LeagueAnalyserTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2020-08-26T16:02:29" hostname="DESKTOP-GL7D8LT" time="60.466">
+<testsuite name="com.bridglabz.LeagueAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-26T16:12:50" hostname="DESKTOP-GL7D8LT" time="0.951">
   <properties/>
-  <testcase name="givenFile_SortWithRespectToAllRounder_ReturnHighestPlayerName" classname="com.bridglabz.LeagueAnalyserTest" time="60.466">
-    <skipped/>
-  </testcase>
+  <testcase name="givenFile_SortWithRespectAverageAndMostSixs_ReturnHighestPlayerName" classname="com.bridglabz.LeagueAnalyserTest" time="0.951"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
