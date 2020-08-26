@@ -16,7 +16,7 @@ public class LeagueRunsCSV {
     @CsvBindByName(column = "BF")
     public double noOfBallFaced;
     @CsvBindByName(column = "Avg")
-    public double averageScore;
+    public double battingAverageScore;
     @CsvBindByName(column = "SR")
     public double strikeRate;
     @CsvBindByName(column = "100")

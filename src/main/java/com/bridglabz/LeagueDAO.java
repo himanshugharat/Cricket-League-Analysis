@@ -7,18 +7,19 @@ public class LeagueDAO {
     public int noOfRuns;
     public int highestScore;
     public double noOfBallFaced;
-    public double averageScore;
+    public double battingAverageScore;
+    public double bowlingAverageScore;
     public double strikeRate;
     public int noOfHundresds;
     public int noOfFifty;
     public int noOfFours;
     public int noOfSixs;
-    public String noOfOvers;
-    public String noOfWickets;
+    public double noOfOvers;
+    public int noOfWickets;
     public String bbi;
-    public String economy;
-    public String fourWikts;
-    public String fiveWkts;
+    public double economy;
+    public int fourWikts;
+    public int fiveWkts;
 
     public LeagueDAO(LeagueRunsCSV leagueRunsCSV) {
         name = leagueRunsCSV.name;
@@ -27,7 +28,7 @@ public class LeagueDAO {
         noOfRuns = leagueRunsCSV.noOfRuns;
         highestScore = leagueRunsCSV.highestScore;
         noOfBallFaced = leagueRunsCSV.noOfBallFaced;
-        averageScore = leagueRunsCSV.averageScore;
+        battingAverageScore = leagueRunsCSV.battingAverageScore;
         strikeRate = leagueRunsCSV.strikeRate;
         noOfHundresds = leagueRunsCSV.noOfHundresds;
         noOfFifty = leagueRunsCSV.noOfFifty;
@@ -45,5 +46,7 @@ public class LeagueDAO {
         economy = leagueWktsCSV.economy;
         fiveWkts = leagueWktsCSV.fiveWkts;
         fourWikts = leagueWktsCSV.foursWikts;
+        bowlingAverageScore = leagueWktsCSV.bowlingAverageScore;
+        noOfRuns = leagueWktsCSV.noOfRuns;
     }
 }

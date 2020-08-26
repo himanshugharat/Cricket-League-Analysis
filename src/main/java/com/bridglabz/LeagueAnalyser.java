@@ -19,7 +19,7 @@ public class LeagueAnalyser {
 
         switch (parameter) {
             case "AVG":
-                comparator = Comparator.comparing(ipl -> ipl.averageScore);
+                comparator = Comparator.comparing(ipl -> ipl.battingAverageScore);
                 leagueList = map.values().stream().collect(Collectors.toList());
                 break;
             case "STRIKE_RATE":
@@ -35,13 +35,18 @@ public class LeagueAnalyser {
                 leagueList = map.values().stream().collect(Collectors.toList());
                 break;
             case "AVG_STRIKE_RATE":
-                comparator = Comparator.comparing(ipl -> ipl.averageScore + ipl.strikeRate + ipl.averageScore);
+                comparator = Comparator.comparing(ipl -> ipl.battingAverageScore + ipl.strikeRate);
                 leagueList = map.values().stream().collect(Collectors.toList());
                 break;
             case "RUN_AVG":
-                comparator = Comparator.comparing(ipl -> ipl.averageScore + ipl.strikeRate + ipl.noOfRuns);
+                comparator = Comparator.comparing(ipl -> ipl.battingAverageScore + ipl.strikeRate + ipl.noOfRuns);
                 leagueList = map.values().stream().collect(Collectors.toList());
                 break;
+            case "BOWLING_AVG":
+                comparator = Comparator.comparing(ipl -> ipl.bowlingAverageScore);
+                leagueList = map.values().stream().collect(Collectors.toList());
+                break;
+
 
         }
         Collections.sort(leagueList, comparator);

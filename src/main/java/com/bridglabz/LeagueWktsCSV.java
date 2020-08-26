@@ -10,21 +10,21 @@ public class LeagueWktsCSV {
     @CsvBindByName(column = "Inns")
     public int noOfInnings;
     @CsvBindByName(column = "Ov")
-    public String noOfOvers;
+    public double noOfOvers;
     @CsvBindByName(column = "Runs")
-    public String noOfRuns;
+    public int noOfRuns;
     @CsvBindByName(column = "Wkts")
-    public String noOfWickets;
+    public int noOfWickets;
     @CsvBindByName(column = "BBI")
     public String bbi;
     @CsvBindByName(column = "Avg")
-    public String averageScore;
+    public double bowlingAverageScore;
     @CsvBindByName(column = "Econ")
-    public String economy;
+    public double economy;
     @CsvBindByName(column = "SR")
-    public String strikeRate;
+    public double strikeRate;
     @CsvBindByName(column = "4w")
-    public String foursWikts;
+    public int foursWikts;
     @CsvBindByName(column = "5w")
-    public String fiveWkts;
+    public int fiveWkts;
 }
