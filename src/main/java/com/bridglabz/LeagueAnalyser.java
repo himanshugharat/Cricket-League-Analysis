@@ -30,6 +30,10 @@ public class LeagueAnalyser {
                 comparator = Comparator.comparing(ipl -> ipl.noOfSixs + ipl.noOfFours);
                 leagueList = map.values().stream().collect(Collectors.toList());
                 break;
+            case "SIX_FOUR_SR":
+                comparator = Comparator.comparing(ipl -> ipl.noOfSixs + ipl.noOfFours+ipl.strikeRate);
+                leagueList = map.values().stream().collect(Collectors.toList());
+                break;
         }
         Collections.sort(leagueList, comparator);
         String sortedJsonData = new Gson().toJson(leagueList);
