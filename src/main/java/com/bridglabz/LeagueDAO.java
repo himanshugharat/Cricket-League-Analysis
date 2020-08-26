@@ -1,7 +1,7 @@
 package com.bridglabz;
 
 public class LeagueDAO {
-    public  int foursWikts;
+    public int foursWikts;
     public String name;
     public int noOfMatches;
     public int noOfInnings;

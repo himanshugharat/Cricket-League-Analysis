@@ -71,21 +71,23 @@ public class LeagueAnalyser {
         String sortedJsonData = new Gson().toJson(leagueList);
         return sortedJsonData;
     }
-public String sortedData(Map<String,LeagueDAO> map,String parameter){
-    switch (parameter) {
-        case "AVG_BATTING_BOWLING":
-            comparator = Comparator.comparing(ipl -> ipl.noOfRuns + ipl.bowlingAverageScore);
-            leagueList = map.values().stream().collect(Collectors.toList());
-            break;
-        case "ALL_ROUNDER":
-            comparator = Comparator.comparing(ipl -> ipl.noOfRuns + ipl.noOfWickets);
-            leagueList = map.values().stream().collect(Collectors.toList());
-            break;
+
+    public String sortedData(Map<String, LeagueDAO> map, String parameter) {
+        switch (parameter) {
+            case "AVG_BATTING_BOWLING":
+                comparator = Comparator.comparing(ipl -> ipl.noOfRuns + ipl.bowlingAverageScore);
+                leagueList = map.values().stream().collect(Collectors.toList());
+                break;
+            case "ALL_ROUNDER":
+                comparator = Comparator.comparing(ipl -> ipl.noOfRuns + ipl.noOfWickets);
+                leagueList = map.values().stream().collect(Collectors.toList());
+                break;
+        }
+        Collections.sort(leagueList, comparator);
+        String sortedJsonData = new Gson().toJson(leagueList);
+        return sortedJsonData;
     }
-    Collections.sort(leagueList, comparator);
-    String sortedJsonData = new Gson().toJson(leagueList);
-    return sortedJsonData;
-}
+
     public enum Player {
         RUNS, WKTS
     }

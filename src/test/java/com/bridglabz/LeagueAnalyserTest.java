@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.List;
 import java.util.Map;
 
 public class LeagueAnalyserTest {
@@ -144,24 +143,26 @@ public class LeagueAnalyserTest {
         Assert.assertEquals("Deepak Chahar", leagueRunsCSVS[leagueRunsCSVS.length - 1].name);
 
     }
+
     @Test
     public void givenFile_SortWithRespectBowlerAndBattingAverage_ReturnHighestPlayerName() throws LeagueAnalyserException {
-        LeagueLoader leagueLoader=new LeagueLoader();
-        LeagueAnalyser leagueAnalyser=new LeagueAnalyser();
-        Map<String,LeagueDAO> map=leagueLoader.getListData();
-        String sortedData = leagueAnalyser.sortedData(map,"AVG_BATTING_BOWLING");
+        LeagueLoader leagueLoader = new LeagueLoader();
+        LeagueAnalyser leagueAnalyser = new LeagueAnalyser();
+        Map<String, LeagueDAO> map = leagueLoader.getListData();
+        String sortedData = leagueAnalyser.sortedData(map, "AVG_BATTING_BOWLING");
         LeagueDAO[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueDAO[].class);
-        Assert.assertEquals("Mayank Markande", leagueRunsCSVS[leagueRunsCSVS.length-1].name);
+        Assert.assertEquals("Mayank Markande", leagueRunsCSVS[leagueRunsCSVS.length - 1].name);
 
     }
+
     @Test
     public void givenFile_SortWithRespectToAllRounder_ReturnHighestPlayerName() throws LeagueAnalyserException {
-        LeagueLoader leagueLoader=new LeagueLoader();
-        LeagueAnalyser leagueAnalyser=new LeagueAnalyser();
-        Map<String,LeagueDAO> map=leagueLoader.getListData();
-        String sortedData = leagueAnalyser.sortedData(map,"ALL_ROUNDER");
+        LeagueLoader leagueLoader = new LeagueLoader();
+        LeagueAnalyser leagueAnalyser = new LeagueAnalyser();
+        Map<String, LeagueDAO> map = leagueLoader.getListData();
+        String sortedData = leagueAnalyser.sortedData(map, "ALL_ROUNDER");
         LeagueDAO[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueDAO[].class);
-        Assert.assertEquals("Mayank Markande", leagueRunsCSVS[leagueRunsCSVS.length-1].name);
+        Assert.assertEquals("Mayank Markande", leagueRunsCSVS[leagueRunsCSVS.length - 1].name);
 
     }
 }
