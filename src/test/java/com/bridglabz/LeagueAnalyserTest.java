@@ -111,4 +111,13 @@ public class LeagueAnalyserTest {
         Assert.assertEquals("Ben Cutting", leagueRunsCSVS[leagueRunsCSVS.length - 1].name);
 
     }
+    @Test
+    public void givenFile_SortWithRespectBowlerStrikeRate_ReturnHighestPlayerName() throws LeagueAnalyserException {
+        LeagueAnalyser leagueAnalyser = new LeagueAnalyser();
+        leagueAnalyser.loadData(LeagueAnalyser.Player.WKTS, WKTS_SHEET);
+        String sortedData = leagueAnalyser.sortData("BOWLING_SR_4W_5W");
+        LeagueWktsCSV[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueWktsCSV[].class);
+        Assert.assertEquals("Kagiso Rabada", leagueRunsCSVS[leagueRunsCSVS.length - 1].name);
+
+    }
 }

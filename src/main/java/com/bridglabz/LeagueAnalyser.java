@@ -54,6 +54,10 @@ public class LeagueAnalyser {
                 comparator = Comparator.comparing(ipl -> ipl.economy);
                 leagueList = map.values().stream().collect(Collectors.toList());
                 break;
+            case "BOWLING_SR_4W_5W":
+                comparator = Comparator.comparing(ipl -> ipl.strikeRate+ipl.fourWikts+ipl.fiveWkts);
+                leagueList = map.values().stream().collect(Collectors.toList());
+                break;
 
         }
         Collections.sort(leagueList, comparator);
