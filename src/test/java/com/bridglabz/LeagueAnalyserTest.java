@@ -34,4 +34,14 @@ public class LeagueAnalyserTest {
         Assert.assertEquals("Ishant Sharma", leagueRunsCSVS[leagueRunsCSVS.length - 1].name);
 
     }
+
+    @Test
+    public void givenFile_SortWithRespectToSixAndFour_ReturnHighestPlayerName() throws LeagueAnalyserException {
+        LeagueAnalyser leagueAnalyser = new LeagueAnalyser();
+        leagueAnalyser.loadData(LeagueAnalyser.Player.RUNS, RUNS_SHEET);
+        String sortedData = leagueAnalyser.sortData("SIX_FOUR");
+        LeagueRunsCSV[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueRunsCSV[].class);
+        Assert.assertEquals("Andre Russell", leagueRunsCSVS[leagueRunsCSVS.length - 1].name);
+
+    }
 }
