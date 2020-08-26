@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridglabz.LeagueAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-26T10:32:32" hostname="DESKTOP-GL7D8LT" time="0.815">
+<testsuite name="com.bridglabz.LeagueAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-26T10:35:48" hostname="DESKTOP-GL7D8LT" time="0.804">
   <properties/>
-  <testcase name="givenFile_SortWithRespectBowlingStrikeRates_ReturnHighestPlayerName" classname="com.bridglabz.LeagueAnalyserTest" time="0.815"/>
+  <testcase name="givenFile_SortWithRespectBowlerBestEconomy_ReturnHighestPlayerName" classname="com.bridglabz.LeagueAnalyserTest" time="0.804"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
