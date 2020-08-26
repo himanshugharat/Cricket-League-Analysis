@@ -35,11 +35,11 @@ public class LeagueAnalyser {
                 leagueList = map.values().stream().collect(Collectors.toList());
                 break;
             case "AVG_STRIKE_RATE":
-                comparator = Comparator.comparing(ipl -> ipl.averageScore + ipl.strikeRate+ ipl.averageScore);
+                comparator = Comparator.comparing(ipl -> ipl.averageScore + ipl.strikeRate + ipl.averageScore);
                 leagueList = map.values().stream().collect(Collectors.toList());
                 break;
             case "RUN_AVG":
-                comparator = Comparator.comparing(ipl -> ipl.averageScore + ipl.strikeRate+ipl.noOfRuns);
+                comparator = Comparator.comparing(ipl -> ipl.averageScore + ipl.strikeRate + ipl.noOfRuns);
                 leagueList = map.values().stream().collect(Collectors.toList());
                 break;
 
