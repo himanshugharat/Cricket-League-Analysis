@@ -19,9 +19,19 @@ public class LeagueAnalyserTest {
     public void givenFile_SortWithRespectToAverage_ReturnHighestBattingAvg() throws LeagueAnalyserException {
         LeagueAnalyser leagueAnalyser = new LeagueAnalyser();
         leagueAnalyser.loadData(LeagueAnalyser.Player.RUNS, RUNS_SHEET);
-        String sortedData = leagueAnalyser.sortData();
+        String sortedData = leagueAnalyser.sortData("AVG");
         LeagueRunsCSV[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueRunsCSV[].class);
-        Assert.assertEquals(83.2, leagueRunsCSVS[leagueRunsCSVS.length - 1].averageScore, 0.0);
+        Assert.assertEquals("MS Dhoni", leagueRunsCSVS[leagueRunsCSVS.length - 1].name);
+
+    }
+
+    @Test
+    public void givenFile_SortWithRespectToStrikeRate_ReturnHighestStrikeRate() throws LeagueAnalyserException {
+        LeagueAnalyser leagueAnalyser = new LeagueAnalyser();
+        leagueAnalyser.loadData(LeagueAnalyser.Player.RUNS, RUNS_SHEET);
+        String sortedData = leagueAnalyser.sortData("STRIKE_RATE");
+        LeagueRunsCSV[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueRunsCSV[].class);
+        Assert.assertEquals("Ishant Sharma", leagueRunsCSVS[leagueRunsCSVS.length - 1].name);
 
     }
 }
