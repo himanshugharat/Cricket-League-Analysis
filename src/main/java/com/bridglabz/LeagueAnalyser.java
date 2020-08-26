@@ -46,7 +46,10 @@ public class LeagueAnalyser {
                 comparator = Comparator.comparing(ipl -> ipl.bowlingAverageScore);
                 leagueList = map.values().stream().collect(Collectors.toList());
                 break;
-
+            case "BOWLING_Strike_RATES":
+                comparator = Comparator.comparing(ipl -> ipl.strikeRate);
+                leagueList = map.values().stream().collect(Collectors.toList());
+                break;
 
         }
         Collections.sort(leagueList, comparator);
