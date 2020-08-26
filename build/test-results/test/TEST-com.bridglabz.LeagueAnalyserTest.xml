@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridglabz.LeagueAnalyserTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-08-26T10:02:13" hostname="DESKTOP-GL7D8LT" time="0.836">
+<testsuite name="com.bridglabz.LeagueAnalyserTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-08-26T10:07:00" hostname="DESKTOP-GL7D8LT" time="0.811">
   <properties/>
-  <testcase name="givenFile_SortWithRespectAverageAndStrikeRate_ReturnHighestPlayerName" classname="com.bridglabz.LeagueAnalyserTest" time="0.836">
-    <failure message="org.junit.ComparisonFailure: expected:&lt;[Andre Russell]&gt; but was:&lt;[Ishant Sharma]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[Andre Russell]&gt; but was:&lt;[Ishant Sharma]&gt;
+  <testcase name="givenFile_SortWithRespectAverageAndRuns_ReturnHighestPlayerName" classname="com.bridglabz.LeagueAnalyserTest" time="0.811">
+    <failure message="org.junit.ComparisonFailure: expected:&lt;[Ishant Sharma]&gt; but was:&lt;[David Warner ]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[Ishant Sharma]&gt; but was:&lt;[David Warner ]&gt;
 	at org.junit.Assert.assertEquals(Assert.java:115)
 	at org.junit.Assert.assertEquals(Assert.java:144)
-	at com.bridglabz.LeagueAnalyserTest.givenFile_SortWithRespectAverageAndStrikeRate_ReturnHighestPlayerName(LeagueAnalyserTest.java:63)
+	at com.bridglabz.LeagueAnalyserTest.givenFile_SortWithRespectAverageAndRuns_ReturnHighestPlayerName(LeagueAnalyserTest.java:72)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
