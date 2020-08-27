@@ -1,6 +1,8 @@
 package com.bridglabz;
 
 public class LeagueDAO {
+    public double battingStrikeRate;
+    public double bowlingStrikeRate;
     public int foursWikts;
     public String name;
     public int noOfMatches;
@@ -49,6 +51,7 @@ public class LeagueDAO {
         fourWikts = leagueWktsCSV.foursWikts;
         bowlingAverageScore = leagueWktsCSV.bowlingAverageScore;
         noOfRuns = leagueWktsCSV.noOfRuns;
+        bowlingStrikeRate = leagueWktsCSV.bowlingStrikeRate;
     }
 
     public LeagueDAO(LeagueDAO leagueWktsCSV, LeagueDAO leagueRunsCSV) {
@@ -70,11 +73,99 @@ public class LeagueDAO {
         highestScore = leagueRunsCSV.highestScore;
         noOfBallFaced = leagueRunsCSV.noOfBallFaced;
         battingAverageScore = leagueRunsCSV.battingAverageScore;
-        strikeRate = leagueRunsCSV.strikeRate;
+        battingStrikeRate = leagueRunsCSV.strikeRate;
         noOfHundresds = leagueRunsCSV.noOfHundresds;
         noOfFifty = leagueRunsCSV.noOfFifty;
         noOfFours = leagueRunsCSV.noOfFours;
         noOfSixs = leagueRunsCSV.noOfSixs;
 
+    }
+
+    public double getBattingStrikeRate() {
+        return battingStrikeRate;
+    }
+
+    public double getBowlingStrikeRate() {
+        return bowlingStrikeRate;
+    }
+
+    public int getFoursWikts() {
+        return foursWikts;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getNoOfMatches() {
+        return noOfMatches;
+    }
+
+    public int getNoOfInnings() {
+        return noOfInnings;
+    }
+
+    public int getNoOfRuns() {
+        return noOfRuns;
+    }
+
+    public int getHighestScore() {
+        return highestScore;
+    }
+
+    public double getNoOfBallFaced() {
+        return noOfBallFaced;
+    }
+
+    public double getBattingAverageScore() {
+        return battingAverageScore;
+    }
+
+    public double getBowlingAverageScore() {
+        return bowlingAverageScore;
+    }
+
+    public double getStrikeRate() {
+        return strikeRate;
+    }
+
+    public int getNoOfHundresds() {
+        return noOfHundresds;
+    }
+
+    public int getNoOfFifty() {
+        return noOfFifty;
+    }
+
+    public int getNoOfFours() {
+        return noOfFours;
+    }
+
+    public int getNoOfSixs() {
+        return noOfSixs;
+    }
+
+    public double getNoOfOvers() {
+        return noOfOvers;
+    }
+
+    public int getNoOfWickets() {
+        return noOfWickets;
+    }
+
+    public String getBbi() {
+        return bbi;
+    }
+
+    public double getEconomy() {
+        return economy;
+    }
+
+    public int getFourWikts() {
+        return fourWikts;
+    }
+
+    public int getFiveWkts() {
+        return fiveWkts;
     }
 }
