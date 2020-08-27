@@ -53,6 +53,7 @@ public class LeagueLoader {
         Map<String, LeagueDAO> map1 = loadLeagueData(".\\src\\test\\resources\\IPL2019FactsheetMostRuns.csv", LeagueRunsCSV.class);
         Map<String, LeagueDAO> map2 = loadLeagueData(".\\src\\test\\resources\\IPL2019FactsheetMostWkts.csv", LeagueWktsCSV.class);
         Map<String, LeagueDAO> map = new HashMap();
+        // map1.putAll(map2);
         for (String name : map1.keySet()) {
             for (String name1 : map2.keySet()) {
                 if (new ArrayList<>(map1.values()).equals(new ArrayList<>(map2.values()))) {
@@ -63,5 +64,8 @@ public class LeagueLoader {
             }
         }
         return map;
+
     }
 }
+
+

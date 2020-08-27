@@ -27,4 +27,52 @@ public class LeagueWktsCSV {
     public int foursWikts;
     @CsvBindByName(column = "5w")
     public int fiveWkts;
+
+    public String getName() {
+        return name;
+    }
+
+    public int getNoOfMatches() {
+        return noOfMatches;
+    }
+
+    public int getNoOfInnings() {
+        return noOfInnings;
+    }
+
+    public double getNoOfOvers() {
+        return noOfOvers;
+    }
+
+    public int getNoOfRuns() {
+        return noOfRuns;
+    }
+
+    public int getNoOfWickets() {
+        return noOfWickets;
+    }
+
+    public String getBbi() {
+        return bbi;
+    }
+
+    public double getBowlingAverageScore() {
+        return bowlingAverageScore;
+    }
+
+    public double getEconomy() {
+        return economy;
+    }
+
+    public double getStrikeRate() {
+        return strikeRate;
+    }
+
+    public int getFoursWikts() {
+        return foursWikts;
+    }
+
+    public int getFiveWkts() {
+        return fiveWkts;
+    }
 }
