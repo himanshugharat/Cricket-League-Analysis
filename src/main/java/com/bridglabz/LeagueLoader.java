@@ -49,19 +49,19 @@ public class LeagueLoader {
     }
 
     public Map<String, LeagueDAO> getListData() throws LeagueAnalyserException {
-        Map<String, LeagueDAO> map1 = loadLeagueData(".\\src\\test\\resources\\IPL2019FactsheetMostRuns.csv", LeagueRunsCSV.class);
-        Map<String, LeagueDAO> map2 = loadLeagueData(".\\src\\test\\resources\\IPL2019FactsheetMostWkts.csv", LeagueWktsCSV.class);
-        Map<String, LeagueDAO> map = new HashMap();
-        for (String name : map1.keySet()) {
-            for (String name1 : map2.keySet()) {
-                if (new ArrayList<>(map1.values()).equals(new ArrayList<>(map2.values()))) {
-                    if (map1.get(name).noOfHundresds == 0 && map2.get(name1).noOfFifty == 0) {
-                        map.put(map1.get(name).name, new LeagueDAO(map1.get(name), map2.get(name1)));
+        Map<String, LeagueDAO> runsMap = loadLeagueData(".\\src\\test\\resources\\IPL2019FactsheetMostRuns.csv", LeagueRunsCSV.class);
+        Map<String, LeagueDAO> wktsMap = loadLeagueData(".\\src\\test\\resources\\IPL2019FactsheetMostWkts.csv", LeagueWktsCSV.class);
+        Map<String, LeagueDAO> CombineMap = new HashMap();
+        for (String battingPlayers : runsMap.keySet()) {
+            for (String bowlingPlayers : wktsMap.keySet()) {
+                if (new ArrayList<>(runsMap.values()).equals(new ArrayList<>(wktsMap.values()))) {
+                    if (runsMap.get(battingPlayers).noOfHundresds == 0 && wktsMap.get(bowlingPlayers).noOfFifty == 0) {
+                        CombineMap.put(runsMap.get(battingPlayers).name, new LeagueDAO(runsMap.get(battingPlayers), wktsMap.get(bowlingPlayers)));
                     }
                 }
             }
         }
-        return map;
+        return CombineMap;
     }
 }
 

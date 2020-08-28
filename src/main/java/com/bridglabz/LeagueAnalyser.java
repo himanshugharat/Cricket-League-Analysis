@@ -6,13 +6,13 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class LeagueAnalyser {
-    Map<String, LeagueDAO> map = new HashMap();
+    Map<String, LeagueDAO> leagueDAOMap = new HashMap();
     Comparator<LeagueDAO> comparator = null;
     List<LeagueDAO> leagueList = null;
 
     public int loadData(Player player, String csvFilePath) throws LeagueAnalyserException {
-        map = new LeagueLoader().loadLeagueData(csvFilePath, player);
-        return map.size();
+        leagueDAOMap = new LeagueLoader().loadLeagueData(csvFilePath, player);
+        return leagueDAOMap.size();
     }
 
     public String sortData(String parameter) {
@@ -67,13 +67,13 @@ public class LeagueAnalyser {
                 comparator = Comparator.comparing((LeagueDAO l) -> l.getBattingAverageScore()).thenComparing(l -> l.getNoOfHundresds()).reversed();
                 break;
         }
-        leagueList = map.values().stream().collect(Collectors.toList());
+        leagueList = leagueDAOMap.values().stream().collect(Collectors.toList());
         Collections.sort(leagueList, comparator);
         String sortedJsonData = new Gson().toJson(leagueList);
         return sortedJsonData;
     }
 
-    public String sortedData(Map<String, LeagueDAO> map, String parameter) {
+    public String sortedData(Map<String, LeagueDAO> leagueDAOMap, String parameter) {
         switch (parameter) {
             case "AVG_BATTING_BOWLING":
                 comparator = Comparator.comparing((LeagueDAO l) -> l.getNoOfRuns())
@@ -88,7 +88,7 @@ public class LeagueAnalyser {
                         .thenComparing(l -> l.getBattingAverageScore()).reversed();
                 break;
         }
-        leagueList = map.values().stream().collect(Collectors.toList());
+        leagueList = leagueDAOMap.values().stream().collect(Collectors.toList());
         Collections.sort(leagueList, comparator);
         String sortedJsonData = new Gson().toJson(leagueList);
         return sortedJsonData;
