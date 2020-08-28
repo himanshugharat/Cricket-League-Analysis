@@ -78,7 +78,6 @@ public class LeagueDAO {
         noOfFifty = leagueRunsCSV.noOfFifty;
         noOfFours = leagueRunsCSV.noOfFours;
         noOfSixs = leagueRunsCSV.noOfSixs;
-
     }
 
     public double getBattingStrikeRate() {

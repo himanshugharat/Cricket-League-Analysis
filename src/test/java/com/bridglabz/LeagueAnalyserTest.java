@@ -31,7 +31,6 @@ public class LeagueAnalyserTest {
         String sortedData = leagueAnalyser.sortData("AVG");
         LeagueRunsCSV[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueRunsCSV[].class);
         Assert.assertEquals("Harpreet Brar", leagueRunsCSVS[leagueRunsCSVS.length - 1].name);
-
     }
 
     @Test
@@ -41,7 +40,6 @@ public class LeagueAnalyserTest {
         String sortedData = leagueAnalyser.sortData("STRIKE_RATE");
         LeagueRunsCSV[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueRunsCSV[].class);
         Assert.assertEquals("Ishant Sharma", leagueRunsCSVS[0].name);
-
     }
 
     @Test
@@ -51,7 +49,6 @@ public class LeagueAnalyserTest {
         String sortedData = leagueAnalyser.sortData("SIX_FOUR");
         LeagueRunsCSV[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueRunsCSV[].class);
         Assert.assertEquals("David Warner ", leagueRunsCSVS[0].name);
-
     }
 
     @Test
@@ -61,7 +58,6 @@ public class LeagueAnalyserTest {
         String sortedData = leagueAnalyser.sortData("SIX_FOUR_SR");
         LeagueRunsCSV[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueRunsCSV[].class);
         Assert.assertEquals("David Warner ", leagueRunsCSVS[0].name);
-
     }
 
     @Test
@@ -71,7 +67,6 @@ public class LeagueAnalyserTest {
         String sortedData = leagueAnalyser.sortData("AVG_STRIKE_RATE");
         LeagueRunsCSV[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueRunsCSV[].class);
         Assert.assertEquals("MS Dhoni", leagueRunsCSVS[0].name);
-
     }
 
     @Test
@@ -81,7 +76,6 @@ public class LeagueAnalyserTest {
         String sortedData = leagueAnalyser.sortData("RUN_AVG");
         LeagueRunsCSV[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueRunsCSV[].class);
         Assert.assertEquals("MS Dhoni", leagueRunsCSVS[0].name);
-
     }
 
     @Test
@@ -91,7 +85,6 @@ public class LeagueAnalyserTest {
         String sortedData = leagueAnalyser.sortData("BOWLING_AVG");
         LeagueWktsCSV[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueWktsCSV[].class);
         Assert.assertEquals("Krishnappa Gowtham", leagueRunsCSVS[0].name);
-
     }
 
     @Test
@@ -101,7 +94,6 @@ public class LeagueAnalyserTest {
         String sortedData = leagueAnalyser.sortData("BOWLING_Strike_RATES");
         LeagueWktsCSV[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueWktsCSV[].class);
         Assert.assertEquals("Krishnappa Gowtham", leagueRunsCSVS[0].name);
-
     }
 
     @Test
@@ -111,7 +103,6 @@ public class LeagueAnalyserTest {
         String sortedData = leagueAnalyser.sortData("BOWLING_ECO");
         LeagueWktsCSV[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueWktsCSV[].class);
         Assert.assertEquals("Ben Cutting", leagueRunsCSVS[0].name);
-
     }
 
     @Test
@@ -121,7 +112,6 @@ public class LeagueAnalyserTest {
         String sortedData = leagueAnalyser.sortData("BOWLING_SR_4W_5W");
         LeagueWktsCSV[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueWktsCSV[].class);
         Assert.assertEquals("Alzarri Joseph", leagueRunsCSVS[0].name);
-
     }
 
     @Test
@@ -131,7 +121,6 @@ public class LeagueAnalyserTest {
         String sortedData = leagueAnalyser.sortData("BOWLING_SR_AVG");
         LeagueWktsCSV[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueWktsCSV[].class);
         Assert.assertEquals("Yusuf Pathan", leagueRunsCSVS[leagueRunsCSVS.length - 1].name);
-
     }
 
     @Test
@@ -141,7 +130,6 @@ public class LeagueAnalyserTest {
         String sortedData = leagueAnalyser.sortData("BOWLING_WKTS_AVG");
         LeagueWktsCSV[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueWktsCSV[].class);
         Assert.assertEquals("Deepak Chahar", leagueRunsCSVS[0].name);
-
     }
 
     @Test
@@ -152,7 +140,6 @@ public class LeagueAnalyserTest {
         String sortedData = leagueAnalyser.sortedData(map, "AVG_BATTING_BOWLING");
         LeagueDAO[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueDAO[].class);
         Assert.assertEquals("Mayank Markande", leagueRunsCSVS[0].name);
-
     }
 
     @Test
@@ -163,7 +150,6 @@ public class LeagueAnalyserTest {
         String sortedData = leagueAnalyser.sortedData(map, "ALL_ROUNDER");
         LeagueDAO[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueDAO[].class);
         Assert.assertEquals("Mayank Markande", leagueRunsCSVS[0].name);
-
     }
 
     @Test
@@ -173,7 +159,6 @@ public class LeagueAnalyserTest {
         String sortedData = leagueAnalyser.sortData("SIX_AVG");
         LeagueRunsCSV[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueRunsCSV[].class);
         Assert.assertEquals("MS Dhoni", leagueRunsCSVS[0].name);
-
     }
 
     @Test
@@ -184,6 +169,5 @@ public class LeagueAnalyserTest {
         String sortedData = leagueAnalyser.sortedData(map, "AVG");
         LeagueDAO[] leagueRunsCSVS = new Gson().fromJson(sortedData, LeagueDAO[].class);
         Assert.assertEquals("Mayank Markande", leagueRunsCSVS[0].name);
-
     }
 }

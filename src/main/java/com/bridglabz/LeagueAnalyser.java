@@ -23,7 +23,6 @@ public class LeagueAnalyser {
                 break;
             case "STRIKE_RATE":
                 comparator = Comparator.comparing((LeagueDAO l) -> l.getStrikeRate()).reversed();
-
                 break;
             case "SIX_FOUR":
                 comparator = Comparator.comparing((LeagueDAO l) -> l.getNoOfRuns())
