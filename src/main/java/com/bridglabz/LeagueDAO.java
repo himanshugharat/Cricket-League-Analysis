@@ -3,7 +3,7 @@ package com.bridglabz;
 public class LeagueDAO {
     public double battingStrikeRate;
     public double bowlingStrikeRate;
-    public int foursWikts;
+    public int foursWickets;
     public String name;
     public int noOfMatches;
     public int noOfInnings;
@@ -13,16 +13,16 @@ public class LeagueDAO {
     public double battingAverageScore;
     public double bowlingAverageScore;
     public double strikeRate;
-    public int noOfHundresds;
+    public int noOfHundreds;
     public int noOfFifty;
     public int noOfFours;
-    public int noOfSixs;
+    public int noOfSix;
     public double noOfOvers;
     public int noOfWickets;
     public String bbi;
     public double economy;
-    public int fourWikts;
-    public int fiveWkts;
+    public int fourWickets;
+    public int fiveWickets;
 
     public LeagueDAO(LeagueRunsCSV leagueRunsCSV) {
         name = leagueRunsCSV.name;
@@ -33,10 +33,10 @@ public class LeagueDAO {
         noOfBallFaced = leagueRunsCSV.noOfBallFaced;
         battingAverageScore = leagueRunsCSV.battingAverageScore;
         strikeRate = leagueRunsCSV.strikeRate;
-        noOfHundresds = leagueRunsCSV.noOfHundresds;
+        noOfHundreds = leagueRunsCSV.noOfHundresds;
         noOfFifty = leagueRunsCSV.noOfFifty;
         noOfFours = leagueRunsCSV.noOfFours;
-        noOfSixs = leagueRunsCSV.noOfSixs;
+        noOfSix = leagueRunsCSV.noOfSixs;
     }
 
     public LeagueDAO(LeagueWktsCSV leagueWktsCSV) {
@@ -47,25 +47,25 @@ public class LeagueDAO {
         noOfWickets = leagueWktsCSV.noOfWickets;
         bbi = leagueWktsCSV.bbi;
         economy = leagueWktsCSV.economy;
-        fiveWkts = leagueWktsCSV.fiveWkts;
-        fourWikts = leagueWktsCSV.foursWikts;
+        fiveWickets = leagueWktsCSV.fiveWkts;
+        fourWickets = leagueWktsCSV.foursWikts;
         bowlingAverageScore = leagueWktsCSV.bowlingAverageScore;
         noOfRuns = leagueWktsCSV.noOfRuns;
         bowlingStrikeRate = leagueWktsCSV.bowlingStrikeRate;
     }
 
-    public LeagueDAO(LeagueDAO leagueWktsCSV, LeagueDAO leagueRunsCSV) {
-        name = leagueWktsCSV.name;
-        noOfMatches = leagueWktsCSV.noOfMatches;
-        noOfInnings = leagueWktsCSV.noOfInnings;
-        noOfOvers = leagueWktsCSV.noOfOvers;
-        noOfWickets = leagueWktsCSV.noOfWickets;
-        bbi = leagueWktsCSV.bbi;
-        economy = leagueWktsCSV.economy;
-        fiveWkts = leagueWktsCSV.fiveWkts;
-        fourWikts = leagueWktsCSV.foursWikts;
-        bowlingAverageScore = leagueWktsCSV.bowlingAverageScore;
-        noOfRuns = leagueWktsCSV.noOfRuns;
+    public LeagueDAO(LeagueDAO leagueWicketsCSV, LeagueDAO leagueRunsCSV) {
+        name = leagueWicketsCSV.name;
+        noOfMatches = leagueWicketsCSV.noOfMatches;
+        noOfInnings = leagueWicketsCSV.noOfInnings;
+        noOfOvers = leagueWicketsCSV.noOfOvers;
+        noOfWickets = leagueWicketsCSV.noOfWickets;
+        bbi = leagueWicketsCSV.bbi;
+        economy = leagueWicketsCSV.economy;
+        fiveWickets = leagueWicketsCSV.fiveWickets;
+        fourWickets = leagueWicketsCSV.foursWickets;
+        bowlingAverageScore = leagueWicketsCSV.bowlingAverageScore;
+        noOfRuns = leagueWicketsCSV.noOfRuns;
         name = leagueRunsCSV.name;
         noOfMatches = leagueRunsCSV.noOfMatches;
         noOfInnings = leagueRunsCSV.noOfInnings;
@@ -74,46 +74,18 @@ public class LeagueDAO {
         noOfBallFaced = leagueRunsCSV.noOfBallFaced;
         battingAverageScore = leagueRunsCSV.battingAverageScore;
         battingStrikeRate = leagueRunsCSV.strikeRate;
-        noOfHundresds = leagueRunsCSV.noOfHundresds;
+        noOfHundreds = leagueRunsCSV.noOfHundreds;
         noOfFifty = leagueRunsCSV.noOfFifty;
         noOfFours = leagueRunsCSV.noOfFours;
-        noOfSixs = leagueRunsCSV.noOfSixs;
+        noOfSix = leagueRunsCSV.noOfSix;
     }
 
-    public double getBattingStrikeRate() {
-        return battingStrikeRate;
-    }
-
-    public double getBowlingStrikeRate() {
-        return bowlingStrikeRate;
-    }
-
-    public int getFoursWikts() {
-        return foursWikts;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getNoOfMatches() {
-        return noOfMatches;
-    }
-
-    public int getNoOfInnings() {
-        return noOfInnings;
+    public int getFoursWickets() {
+        return foursWickets;
     }
 
     public int getNoOfRuns() {
         return noOfRuns;
-    }
-
-    public int getHighestScore() {
-        return highestScore;
-    }
-
-    public double getNoOfBallFaced() {
-        return noOfBallFaced;
     }
 
     public double getBattingAverageScore() {
@@ -128,43 +100,23 @@ public class LeagueDAO {
         return strikeRate;
     }
 
-    public int getNoOfHundresds() {
-        return noOfHundresds;
-    }
-
-    public int getNoOfFifty() {
-        return noOfFifty;
+    public int getNoOfHundreds() {
+        return noOfHundreds;
     }
 
     public int getNoOfFours() {
         return noOfFours;
     }
 
-    public int getNoOfSixs() {
-        return noOfSixs;
-    }
-
-    public double getNoOfOvers() {
-        return noOfOvers;
-    }
-
     public int getNoOfWickets() {
         return noOfWickets;
-    }
-
-    public String getBbi() {
-        return bbi;
     }
 
     public double getEconomy() {
         return economy;
     }
 
-    public int getFourWikts() {
-        return fourWikts;
-    }
-
-    public int getFiveWkts() {
-        return fiveWkts;
+    public int getFiveWickets() {
+        return fiveWickets;
     }
 }

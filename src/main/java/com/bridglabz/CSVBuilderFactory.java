@@ -8,9 +8,5 @@ public class CSVBuilderFactory {
         return new OpenCSVBuilder();
     }
 
-    public static OpenCSVBuilder getCSVBean() {
-        return new OpenCSVBuilder();
-
-    }
 }
 

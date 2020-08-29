@@ -14,18 +14,18 @@ import java.util.Map;
 import java.util.stream.StreamSupport;
 
 public class LeagueLoader {
-    Map map = new HashMap();
+    Map<String, LeagueDAO> map = new HashMap<>();
 
-    public Map<String, LeagueDAO> loadLeagueData(String csvfilePath, LeagueAnalyser.Player player) throws LeagueAnalyserException {
-        if (player.equals(LeagueAnalyser.Player.RUNS)) {
+    public Map<String, LeagueDAO> loadLeagueData(String csvfilePath, Player player) throws LeagueAnalyserException {
+        if (player.equals(Player.RUNS)) {
             return this.loadLeagueData(csvfilePath, LeagueRunsCSV.class);
-        } else if (player.equals(LeagueAnalyser.Player.WKTS)) {
+        } else if (player.equals(Player.WKTS)) {
             return this.loadLeagueData(csvfilePath, LeagueWktsCSV.class);
         }
         return null;
     }
 
-    private <E> Map loadLeagueData(String csvFilePath, Class<E> LeagueCSV) throws LeagueAnalyserException {
+    private <E> Map<String, LeagueDAO> loadLeagueData(String csvFilePath, Class<E> LeagueCSV) throws LeagueAnalyserException {
         try {
             Reader reader = Files.newBufferedReader(Path.of(csvFilePath));
             ICSVBuilder csvBuilder = CSVBuilderFactory.createCSVBuilder();
@@ -48,14 +48,14 @@ public class LeagueLoader {
         }
     }
 
-    public Map<String, LeagueDAO> getListData() throws LeagueAnalyserException {
-        Map<String, LeagueDAO> runsMap = loadLeagueData(".\\src\\test\\resources\\IPL2019FactsheetMostRuns.csv", LeagueRunsCSV.class);
-        Map<String, LeagueDAO> wktsMap = loadLeagueData(".\\src\\test\\resources\\IPL2019FactsheetMostWkts.csv", LeagueWktsCSV.class);
-        Map<String, LeagueDAO> CombineMap = new HashMap();
+    public Map<String, LeagueDAO> getListData(String battingCsvPAth, String bowlingCsvFile) throws LeagueAnalyserException {
+        Map<String, LeagueDAO> runsMap = loadLeagueData(battingCsvPAth, LeagueRunsCSV.class);
+        Map<String, LeagueDAO> wktsMap = loadLeagueData(bowlingCsvFile, LeagueWktsCSV.class);
+        Map<String, LeagueDAO> CombineMap = new HashMap<>();
         for (String battingPlayers : runsMap.keySet()) {
             for (String bowlingPlayers : wktsMap.keySet()) {
                 if (new ArrayList<>(runsMap.values()).equals(new ArrayList<>(wktsMap.values()))) {
-                    if (runsMap.get(battingPlayers).noOfHundresds == 0 && wktsMap.get(bowlingPlayers).noOfFifty == 0) {
+                    if (runsMap.get(battingPlayers).noOfHundreds == 0 && wktsMap.get(bowlingPlayers).noOfFifty == 0) {
                         CombineMap.put(runsMap.get(battingPlayers).name, new LeagueDAO(runsMap.get(battingPlayers), wktsMap.get(bowlingPlayers)));
                     }
                 }

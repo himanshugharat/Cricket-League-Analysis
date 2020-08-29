@@ -13,12 +13,7 @@ public class LeagueAnalyserException extends Exception {
         this.type = type;
     }
 
-    public LeagueAnalyserException(String message, ExceptionType type, Throwable cause) {
-        super(message, cause);
-        this.type = type;
-    }
-
     public enum ExceptionType {
-        FILE_PROBLEM, NO_DATA, INVALID_PLAYER_TYPE
+        FILE_PROBLEM
     }
 }
